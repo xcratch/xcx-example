@@ -1,0 +1,27 @@
+{
+  "name": "xcratch-example",
+  "version": "0.1.0",
+  "description": "example extension for Xcratch",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yokobond/xcratch-example.git"
+  },
+  "keywords": [
+    "scratch",
+    "xcratch"
+  ],
+  "author": "Koji Yokokawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yokobond/xcratch-example/issues"
+  },
+  "homepage": "https://github.com/yokobond/xcratch-example#readme",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-scratch": "^6.0.0",
+    "eslint-plugin-react": "^7.22.0",
+  },
+  "dependencies": {}
+}
