@@ -114,6 +114,19 @@ When you push it to 'develop' branch, `deploy-gh-pages-dev.yml` will be activate
 When you would like to publish your extension module on another server, check the server accepts [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) from `https://yokobond.github.io/`. If the server was not enabled CORS, Xcratch cannot import your module. 
 
 
+### How to Auto-load Extension
+
+Xcratch loads all extensions which is used in the project automatically. 
+
+If you make a project using at least one block of your extension and save as `examples/example.sb3`. The project can be opened with Xcratch by URL like following. 
+
+```
+https://yokobond.github.io/xcratch/?project=https://<user>.github.io/<repo>/examples/example.sb3
+``` 
+
+When this URL was opened in a web browser, Xcratch loads your extension module automatically then opens the project. 
+
+
 ## Author
 
 👤 **Koji Yokokawa**
