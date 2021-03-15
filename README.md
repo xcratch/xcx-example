@@ -107,9 +107,11 @@ First, you make 'gh-pages' branch and set it to publish according with [Configur
 
 When you push it to 'master' branch, your code is published under `https://<user>.github.io/<repository>/`. 
 
-So that the URL of your extension modules will be `https://<user>.github.io/<repository>/dist/<moduleName>.mjs`. 
+So that the URL of your extension module will be `https://<user>.github.io/<repository>/dist/<moduleName>.mjs`. 
 
 When you push it to 'develop' branch, `deploy-gh-pages-dev.yml` will be activated. This script publishes all your code under `https://<user>.github.io/<repository>/dev/`. 
+
+When you would like to publish your extension module on another server, check the server accepts [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) from `https://yokobond.github.io/`. If the server was not enabled CORS, Xcratch cannot import your module. 
 
 
 ## Author
