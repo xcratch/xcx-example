@@ -21,9 +21,9 @@ cd ./scratch-gui
 npm install
 ```
 
-Download [the latest Xcratch Example Code](https://github.com/yokobond/xcratch-example/archive/master.zip) from [yokobond/xcratch-example](https://github.com/yokobond/xcratch-example). This is the base code to be modified as your extension.
+Then, download [the latest Xcratch Example Code](https://github.com/yokobond/xcratch-example/archive/master.zip) from [yokobond/xcratch-example](https://github.com/yokobond/xcratch-example). This is the base code to be modified as your extension.
 
-Unzip the downloaded file "xcratch-example-master.zip" and rename extracted folder to your extension repo name.
+Unzip the downloaded file "xcratch-example-master.zip" on the same directory of scratch-gui and rename extracted folder to your extension repo name.
 
 ```sh
 unzip xcratch-example-master.zip
@@ -52,7 +52,7 @@ Run the register-script by node.js as follows.
 node ./scripts/register.js --link --id=extensionID -C
 ```
 
-When you could not use Xcratch with some resone, you can register your extension to the normal "LLK/scratch-gui" with `--base=LLK`.
+When you could not use Xcratch with some reason, you can register your extension to the normal "LLK/scratch-gui" with `--base=LLK`.
 
 ```sh
 node ./scripts/register.js --id=extensionID -C --base=LLK
@@ -107,7 +107,9 @@ First, you make 'gh-pages' branch and set it to publish according with [Configur
 
 When you push it to 'master' branch, your code is published under `https://<user>.github.io/<repository>/`. 
 
-So that the URL of your extension module will be `https://<user>.github.io/<repository>/dist/<moduleName>.mjs`. 
+So that the URL of your extension module will be `https://<user>.github.io/<repository>/dist/<moduleName>.mjs` . 
+
+Published module can be used in [Xcratch](https://yokobond.github.io/xcratch/). Select 'Extension Loader' extension and input this URL, your extension blocks will appear in the block pallette. 
 
 When you push it to 'develop' branch, `deploy-gh-pages-dev.yml` will be activated. This script publishes all your code under `https://<user>.github.io/<repository>/dev/`. 
 
