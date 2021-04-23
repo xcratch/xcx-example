@@ -3,7 +3,7 @@ example extension for Xcratch ([yokobond/xcratch: Extendable Scratch3 Programmin
 
 ## ✨ What You can Do with Xcratch
 
-Open [Xcratch Example](https://yokobond.github.io/xcratch/?project=https://yokobond.github.io/xcratch-example/examples/Xcratch%20Example.sb3) to look at what you can do with Xcratch. 
+Open [Example Project](https://yokobond.github.io/xcratch/?project=https://yokobond.github.io/xcratch-example/examples/xcratchExample.sb3) to look at what you can do with "Xcratch Example" extension. 
 
 This project using "Xcratch Example" extension which add an extra-block "do it" to normal Scratch. This "do it" block executes string in its input field as a sentence in Javascript and return the result.
 
@@ -27,22 +27,37 @@ Unzip the downloaded file "xcratch-example-master.zip" on the same directory of 
 
 ```sh
 unzip xcratch-example-master.zip
-mv xcratch-example-master my-extension
+mv xcratch-example-master xcx-my-extension
 ```
 
 This code is a [npm](https://www.npmjs.com/) package, so that you need to do `npm install`.
 
 ```sh
-cd my-extension
+cd xcx-my-extension
 npm install
+```
+
+### Extension Development
+
+Remove unnecessary files from your repo.
+
+```sh
+cd xcx-my-extension
+rm ./dist/*
+rm ./examples/*
 ```
 
 There are some node scripts in "package.json" to develop original extension. Extension name, ID must be changed for your extension before using the scripts. These scripts assumed the scratch-gui is "../scratch-gui". Download scratch-gui on that location or change the script argument.
 
+You must change all extensionID, extensionName, extensionURL in source code under `src/[entry|body]` to the values of your extension.
 
-### Extension Development
+Change these strings in the all files to fit your own extension.
 
-You should change all extensionID, extensionName, extensionURL in source code under `src/[entry|body]` to the values of your extension.
+- "yokobond" for github account
+- "xcratch-example" for repo name
+- "xcratchExample" for extension ID
+- "Xcratch Example" for extension name
+- "XcratchExample" for class name
 
 Then register your extension in a Scratch server for debugging. Script `register.js` adds a extension in a local Scratch server. It makes links of source path to local Scratch code, and modifies code of the Scratch to appear the extension in its extension selector. 
 
