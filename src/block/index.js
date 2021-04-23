@@ -55,6 +55,7 @@ class XcratchExampleBlocks {
 
     /**
      * Set URL to get this extension.
+     * extensionURL will be reset when the module is loaded from the web.
      * @param {string} url - URL
      */
     static set extensionURL (url) {
