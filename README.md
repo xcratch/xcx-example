@@ -138,7 +138,7 @@ Xcratch loads all extensions which is used in the project automatically.
 If you make a project using at least one block of your extension and save as `examples/example.sb3`. The project can be opened with Xcratch by URL like following. 
 
 ```
-https://yokobond.github.io/xcratch/?project=https://<user>.github.io/<repo>/examples/example.sb3
+https://xcratch.github.io/editor/#https://<user>.github.io/<repo>/examples/example.sb3
 ``` 
 
 When this URL was opened in a web browser, Xcratch loads your extension module automatically then opens the project. 
