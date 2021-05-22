@@ -49,15 +49,21 @@ rm ./examples/*
 
 There are some node scripts in "package.json" to develop original extension. Extension name, ID must be changed for your extension before using the scripts. These scripts assumed the scratch-gui is "../scratch-gui". Download scratch-gui on that location or change the script argument.
 
-You must change all extensionID, extensionName, extensionURL in source code under `src/[entry|body]` to the values of your extension.
+You must replace all properties of the project to fit your new extension.
 
 Change these strings in the all files to fit your own extension.
 
+```shell
+node ./scripts/reset-repo.js --username=<github account> --repo=<repository name> --extensionID=<extension ID> --extensionName='<extension name>' --extensionClass=<class name>
+```
+
+This script replace these strings.
+
 - "yokobond" for github account
-- "xcratch-example" for repo name
+- "xcratch-example" for repository name
 - "xcratchExample" for extension ID
 - "Xcratch Example" for extension name
-- "XcratchExample" for class name
+- "XcratchExample" for class name of the extension
 
 Then register your extension in a Scratch server for debugging. Script `register.js` adds a extension in a local Scratch server. It makes links of source path to local Scratch code, and modifies code of the Scratch to appear the extension in its extension selector. 
 
