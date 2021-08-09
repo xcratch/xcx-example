@@ -1,8 +1,13 @@
-import React from 'react';
-import {FormattedMessage} from 'react-intl';
+/**
+ * Formatter which is used for translation.
+ * This will be replaced which is used in the React component.
+ * @param {*} messageData - data for format-message
+ * @returns {string} - message for the current locale
+ */
+let formatMessage = messageData => messageData.defaultMessage;
 
-import xcratchExampleIconURL from './entry-icon.png';
-import xcratchExampleInsetIconURL from './inset-icon.svg';
+import iconURL from './entry-icon.png';
+import insetIconURL from './inset-icon.svg';
 
 const translationMap = {
     'ja': {
@@ -18,20 +23,23 @@ const entry = {
     extensionId: 'xcratchExample',
     extensionURL: 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs',
     collaborator: 'Yengawa Lab',
-    iconURL: xcratchExampleIconURL,
-    insetIconURL: xcratchExampleInsetIconURL,
-    description: (
-        <FormattedMessage
-            defaultMessage="example extension for Xcratch"
-            description="Description for example extension for Xcratch"
-            id="gui.extension.xcratchExample.description"
-        />
-    ),
+    iconURL: iconURL,
+    insetIconURL: insetIconURL,
+    get description () {
+        return formatMessage({
+            defaultMessage: 'example extension for Xcratch',
+            description: 'Description for example extension for Xcratch',
+            id: 'gui.extension.xcratchExample.description'
+        });
+    },
     featured: true,
     disabled: false,
     bluetoothRequired: false,
     internetConnectionRequired: true,
     helpLink: 'https://github.com/yokobond/xcratch-example/',
+    setFormatMessage: formatter => {
+        formatMessage = formatter;
+    },
     translationMap: translationMap
 };
 

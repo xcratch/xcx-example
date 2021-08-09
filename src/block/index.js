@@ -4,11 +4,12 @@ const ArgumentType = require('../../extension-support/argument-type');
 // const log = require('../../util/log');
 
 /**
- * Formatter which is used for translating.
- * When it was loaded as a module, 'formatMessage' will be replaced which is used in the runtime.
- * @type {Function}
+ * Formatter which is used for translation.
+ * This will be replaced which is used in the runtime.
+ * @param {*} messageData - format-message object
+ * @returns {string} - message for the locale
  */
-let formatMessage = require('format-message');
+let formatMessage = messageData => messageData.defaultMessage;
 
 const EXTENSION_ID = 'xcratchExample';
 
