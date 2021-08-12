@@ -62,7 +62,8 @@ const options = {
         'package.json',
         'README.md',
         '.github/workflows/*.yml',
-        'src/**/*.js?'
+        'src/**/*.js',
+        'src/**/*.jsx',
     ],
     from: [
         /yokobond/g,
