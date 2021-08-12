@@ -20,4 +20,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./xcratch-example
           destination_dir: ./dev
-          keep_files: true
+          keep_files: false
