@@ -1,17 +1,15 @@
-# xcratch-example
-example extension for Xcratch ([yokobond/xcratch: Extendable Scratch3 Programming Environment](https://github.com/yokobond/xcratch/))
+# xcx-example
+An example extension for ([Xcratch: Extendable Scratch3 Programming Environment](https://xcratch.github.io/))
 
 ## ✨ What You can Do with Xcratch
 
-Open [Example Project](https://yokobond.github.io/xcratch/?project=https://yokobond.github.io/xcratch-example/examples/xcratchExample.sb3) to look at what you can do with "Xcratch Example" extension. 
+Open [Example Project](https://xcratch.github.io/xcratch/?project=https://xcratch.github.io/xcx-example/examples/xcratchExample.sb3) to look at what you can do with "Xcratch Example" extension. 
 
 This project using "Xcratch Example" extension which add an extra-block "do it" to normal Scratch. This "do it" block executes string in its input field as a sentence in Javascript and return the result.
 
-You can make own extension based on this repo and publish a project using your extension on the web. 
+## How to Develop
 
-## How to Develop Own Extension
-
-### Setup Development Environment
+### Environment Settings
 
 First of all, download [yokobond/scratch-gui at xcratch](https://github.com/yokobond/scratch-gui/tree/xcratch) and setup it as your extension to be registered. 
 
@@ -19,51 +17,16 @@ First of all, download [yokobond/scratch-gui at xcratch](https://github.com/yoko
 git clone -b xcratch https://github.com/yokobond/scratch-gui.git
 cd ./scratch-gui
 npm install
+cd ..
 ```
 
-Then, download [the latest Xcratch Example Code](https://github.com/yokobond/xcratch-example/archive/master.zip) from [yokobond/xcratch-example](https://github.com/yokobond/xcratch-example). This is the base code to be modified as your extension.
-
-Unzip the downloaded file "xcratch-example-master.zip" on the same directory of scratch-gui and rename extracted folder to your extension repo name.
+Clone [xcratch/xcx-example](https://github.com/xcratch/xcx-example).
 
 ```sh
-unzip xcratch-example-master.zip
-mv xcratch-example-master xcx-my-extension
-```
-
-This code is a [npm](https://www.npmjs.com/) package, so that you need to do `npm install`.
-
-```sh
-cd xcx-my-extension
+git clone https://github.com/xcratch/xcx-example.git
+cd ./xcx-example
 npm install
 ```
-
-### Extension Development
-
-Remove unnecessary files from your repo.
-
-```sh
-cd xcx-my-extension
-rm ./dist/*
-rm ./examples/*
-```
-
-There are some node scripts in "package.json" to develop original extension. Extension name, ID must be changed for your extension before using the scripts. These scripts assumed the scratch-gui is "../scratch-gui". Download scratch-gui on that location or change the script argument.
-
-You must replace all properties of the project to fit your new extension.
-
-Change these strings in the all files to fit your own extension.
-
-```shell
-node ./scripts/reset-repo.js --username=<github account> --repo=<repository name> --extensionID=<extension ID> --extensionName='<extension name>' --extensionClass=<class name>
-```
-
-This script replace these strings.
-
-- "yokobond" for github account
-- "xcratch-example" for repository name
-- "xcratchExample" for extension ID
-- "Xcratch Example" for extension name
-- "XcratchExample" for class name of the extension
 
 Then register your extension in a Scratch server for debugging. Script `register.js` adds a extension in a local Scratch server. It makes links of source path to local Scratch code, and modifies code of the Scratch to appear the extension in its extension selector. 
 
@@ -98,7 +61,6 @@ cd ../scratch-gui && npm run start -- --https
 ```
 
 
-
 ### Module Building
 
 Build-script bundles entry/block code and resources into one module file. It copy files to temporal directories in scratch-gui/scratch-vm and bundles by [rollup.js](https://rollupjs.org/guide/en/).
@@ -130,21 +92,21 @@ When you push it to 'master' branch, your code is published under `https://<user
 
 So that the URL of your extension module will be `https://<user>.github.io/<repository>/dist/<moduleName>.mjs` . 
 
-Published module can be used in [Xcratch](https://yokobond.github.io/xcratch/). Select 'Extension Loader' extension and input this URL, your extension blocks will appear in the block pallette. 
+Published module can be used in [Xcratch](https://xcratch.github.io/xcratch/). Select 'Extension Loader' extension and input this URL, your extension blocks will appear in the block pallette. 
 
 When you push it to 'develop' branch, `deploy-gh-pages-dev.yml` will be activated. This script publishes all your code under `https://<user>.github.io/<repository>/dev/`. 
 
-When you would like to publish your extension module on another server, check the server accepts [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) from `https://yokobond.github.io/`. If the server was not enabled CORS, Xcratch cannot import your module. 
+When you would like to publish your extension module on another server, check the server accepts [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) from `https://xcratch.github.io/`. If the server was not enabled CORS, Xcratch cannot import your module. 
 
 
 ### How to Auto-load Extension
 
 Xcratch loads all extensions which is used in the project automatically. 
 
-If you make a project using at least one block of your extension and save as `examples/example.sb3`. The project can be opened with Xcratch by URL like following. 
+If you make a project using at least one block of your extension and save as `projects/example.sb3`. The project can be opened with Xcratch by URL like following. 
 
 ```
-https://xcratch.github.io/editor/#https://<user>.github.io/<repo>/examples/example.sb3
+https://xcratch.github.io/editor/#https://xcratch.github.io/xcx-example/projects/example.sb3
 ``` 
 
 When this URL was opened in a web browser, Xcratch loads your extension module automatically then opens the project. 
@@ -159,7 +121,7 @@ When this URL was opened in a web browser, Xcratch loads your extension module a
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/yokobond/xcratch-example/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/xcratch/xcx-example/issues). 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
@@ -168,4 +130,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2021 [Koji Yokokawa](https://github.com/yokobond).<br />
-This project is [MIT](https://github.com/yokobond/xcratch-example/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/yokobond/xcx-example/blob/master/LICENSE) licensed.
