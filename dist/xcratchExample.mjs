@@ -22,7 +22,7 @@ var translationMap = {
 var entry = {
   name: 'Xcratch Example',
   extensionId: 'xcratchExample',
-  extensionURL: 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs',
+  extensionURL: 'https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs',
   collaborator: 'Yengawa Lab',
   iconURL: img$1,
   insetIconURL: img,
@@ -39,7 +39,7 @@ var entry = {
   disabled: false,
   bluetoothRequired: false,
   internetConnectionRequired: true,
-  helpLink: 'https://github.com/yokobond/xcratch-example/',
+  helpLink: 'https://github.com/xcratch/xcx-example/',
   setFormatMessage: function setFormatMessage(formatter) {
     formatMessage$1 = formatter;
   },
@@ -185,7 +185,7 @@ var EXTENSION_ID = 'xcratchExample';
  * @type {string}
  */
 
-var extensionURL = 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs';
+var extensionURL = 'https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs';
 /**
  * Icon png to be displayed at the left edge of each extension block, encoded as a data URI.
  * @type {string}

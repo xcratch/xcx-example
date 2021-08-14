@@ -21,7 +21,7 @@ const translationMap = {
 const entry = {
     name: 'Xcratch Example',
     extensionId: 'xcratchExample',
-    extensionURL: 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs',
+    extensionURL: 'https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs',
     collaborator: 'Yengawa Lab',
     iconURL: iconURL,
     insetIconURL: insetIconURL,
@@ -36,7 +36,7 @@ const entry = {
     disabled: false,
     bluetoothRequired: false,
     internetConnectionRequired: true,
-    helpLink: 'https://github.com/yokobond/xcratch-example/',
+    helpLink: 'https://github.com/xcratch/xcx-example/',
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },

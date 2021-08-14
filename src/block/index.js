@@ -18,7 +18,7 @@ const EXTENSION_ID = 'xcratchExample';
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
  * @type {string}
  */
-let extensionURL = 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs';
+let extensionURL = 'https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs';
 
 /**
  * Icon png to be displayed at the left edge of each extension block, encoded as a data URI.

@@ -130,4 +130,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2021 [Koji Yokokawa](https://github.com/yokobond).<br />
-This project is [MIT](https://github.com/yokobond/xcx-example/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/xcratch/xcx-example/blob/master/LICENSE) licensed.
