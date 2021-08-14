@@ -3,7 +3,14 @@ An example extension for ([Xcratch: Extendable Scratch3 Programming Environment]
 
 ## ✨ What You can Do with Xcratch
 
-Open [Example Project](https://xcratch.github.io/xcratch/?project=https://xcratch.github.io/xcx-example/examples/xcratchExample.sb3) to look at what you can do with "Xcratch Example" extension. 
+Open [Example Project](https://xcratch.github.io/editor/#https://xcratch.github.io/xcx-example/projects/example.sb3) to look at what you can do with "Xcratch Example" extension. 
+
+Or, load this extension on [Xcratch](https://xcratch.github.io/) with the Extension URL
+
+```
+https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs
+```
+
 
 This project using "Xcratch Example" extension which add an extra-block "do it" to normal Scratch. This "do it" block executes string in its input field as a sentence in Javascript and return the result.
 
@@ -92,7 +99,7 @@ When you push it to 'master' branch, your code is published under `https://<user
 
 So that the URL of your extension module will be `https://<user>.github.io/<repository>/dist/<moduleName>.mjs` . 
 
-Published module can be used in [Xcratch](https://xcratch.github.io/xcratch/). Select 'Extension Loader' extension and input this URL, your extension blocks will appear in the block pallette. 
+Published module can be used in [Xcratch](https://xcratch.github.io/). Select 'Extension Loader' extension and input this URL, your extension blocks will appear in the block pallette. 
 
 When you push it to 'develop' branch, `deploy-gh-pages-dev.yml` will be activated. This script publishes all your code under `https://<user>.github.io/<repository>/dev/`. 
 
@@ -106,7 +113,7 @@ Xcratch loads all extensions which is used in the project automatically.
 If you make a project using at least one block of your extension and save as `projects/example.sb3`. The project can be opened with Xcratch by URL like following. 
 
 ```
-https://xcratch.github.io/editor/#https://xcratch.github.io/xcx-example/projects/example.sb3
+https://xcratch.github.io/editor/#<project URL>
 ``` 
 
 When this URL was opened in a web browser, Xcratch loads your extension module automatically then opens the project. 
