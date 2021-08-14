@@ -1,7 +1,7 @@
 # xcx-example
 An example extension for ([Xcratch: Extendable Scratch3 Programming Environment](https://xcratch.github.io/))
 
-## ✨ What You can Do with Xcratch
+## ✨ What You can Do
 
 Open [Example Project](https://xcratch.github.io/editor/#https://xcratch.github.io/xcx-example/projects/example.sb3) to look at what you can do with "Xcratch Example" extension. 
 
@@ -118,23 +118,9 @@ https://xcratch.github.io/editor/#<project URL>
 
 When this URL was opened in a web browser, Xcratch loads your extension module automatically then opens the project. 
 
-
-## Author
-
-👤 **Koji Yokokawa**
-
-* Website: http://www.yengawa.com/
-* Github: [@yokobond](https://github.com/yokobond)
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/xcratch/xcx-example/issues). 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-
-## 📝 License
-
-Copyright © 2021 [Koji Yokokawa](https://github.com/yokobond).<br />
-This project is [MIT](https://github.com/xcratch/xcx-example/blob/master/LICENSE) licensed.
