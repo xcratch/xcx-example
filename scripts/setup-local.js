@@ -19,11 +19,3 @@ try {
 } catch (err) {
     console.log(err);
 }
-
-// Setup for dev server
-try {
-    execSync(`cd ${GuiRoot} && patch -p1 -N -s < ${path.resolve(__dirname, 'dev_server.patch')}`);
-    console.log(`Apply patch: dev_server.patch`);
-} catch (err) {
-    console.log(err);
-}
