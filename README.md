@@ -7,15 +7,16 @@ This extension add extra-block "do it", that executes string in its input field 
 
 Open [Example Project](https://xcratch.github.io/editor/#https://xcratch.github.io/xcx-example/projects/example.sb3) to look at what you can do with "Xcratch Example" extension. 
 
-This project using "Xcratch Example" extension which 
-
 ## How to Use in Xcratch
 
-This extension can be used with other extension in [Xcratch](https://yokobond.github.io/xcratch/). 
-1. Open [Xcratch Editor](https://yokobond.github.io/xcratch/editor)
+This extension can be used with other extension in [Xcratch](https://xcratch.github.io/). 
+1. Open [Xcratch Editor](https://xcratch.github.io/editor)
 2. Click 'Add Extension' button
 3. Select 'Extension Loader' extension
-4. Type the module URL in the input field  <br>https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs
+4. Type the module URL in the input field 
+```
+https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs
+```
 
 ## 🤝 Contributing
 
