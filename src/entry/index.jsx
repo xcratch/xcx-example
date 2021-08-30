@@ -35,8 +35,8 @@ const entry = {
     featured: true,
     disabled: false,
     bluetoothRequired: false,
-    internetConnectionRequired: true,
-    helpLink: 'https://github.com/xcratch/xcx-example/',
+    internetConnectionRequired: false,
+    helpLink: 'https://xcratch.github.io/xcx-example/',
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },

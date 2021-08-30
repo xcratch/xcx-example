@@ -147,5 +147,4 @@ const extensionTranslations = {
     }
 };
 
-exports.blockClass = XcratchExampleBlocks; // loadable-extension needs this line.
 module.exports = XcratchExampleBlocks;

@@ -38,8 +38,8 @@ var entry = {
   featured: true,
   disabled: false,
   bluetoothRequired: false,
-  internetConnectionRequired: true,
-  helpLink: 'https://github.com/xcratch/xcx-example/',
+  internetConnectionRequired: false,
+  helpLink: 'https://xcratch.github.io/xcx-example/',
   setFormatMessage: function setFormatMessage(formatter) {
     formatMessage$1 = formatter;
   },
@@ -165,7 +165,7 @@ var ArgumentType = {
 };
 var argumentType = ArgumentType;
 
-// const log = require('../../util/log');
+// import log from '../../util/log';
 
 /**
  * Formatter which is used for translation.
@@ -323,9 +323,5 @@ var extensionTranslations = {
     'xcratchExample.doIt': '[SCRIPT] をじっこうする'
   }
 };
-var blockClass = XcratchExampleBlocks; // loadable-extension needs this line.
 
-var _xcratchExample = XcratchExampleBlocks;
-_xcratchExample.blockClass = blockClass;
-
-export { _xcratchExample as __moduleExports, blockClass, entry };
+export { XcratchExampleBlocks as blockClass, entry };

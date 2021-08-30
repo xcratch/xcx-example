@@ -1,48 +1,12 @@
 {
   "name": "xcx-example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "example extension for Xcratch",
   "scripts": {
-    "setup:local": "node ./scripts/setup-local.js",
-    "register": "node ./scripts/register.js --link -C --id=\"xcratchExample\" --gui=\"../scratch-gui\"",
-    "build": "rimraf ./dist && mkdirp ./dist && node ./scripts/build.js --name=xcratchExample --block=\"./src/block\" --entry=\"./src/entry\" --gui=\"../scratch-gui\" --output=\"./dist\"",
-    "build:debug": "rimraf ./build && mkdirp ./build && node ./scripts/build.js --name=xcratchExample --block=\"./src/block\" --entry=\"./src/entry\" --gui=\"../scratch-gui\" --output=\"./build\" --debug",
-    "startDevServer": "cd ../scratch-gui && npm run start -- --https"
+    "register": "npx xcratch-register --link -C --id=xcratchExample --gui=\"../scratch-gui\"",
+    "build": "npx xcratch-build --module=xcratchExample --gui=\"../scratch-gui\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xcratch/xcx-example.git"
-  },
-  "keywords": [
-    "scratch",
-    "xcratch"
-  ],
-  "bugs": {
-    "url": "https://github.com/xcratch/xcx-example/issues"
-  },
-  "homepage": "https://github.com/xcratch/xcx-example#readme",
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-transform-react-jsx": "^7.10.4",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-commonjs": "^15.0.0",
-    "@rollup/plugin-image": "^2.0.5",
-    "@rollup/plugin-multi-entry": "^4.0.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "command-line-args": "^5.1.1",
-    "eslint": "^7.21.0",
-    "eslint-config-scratch": "^6.0.0",
-    "eslint-plugin-react": "^7.22.0",
-    "fs-extra": "^9.0.1",
-    "mkdirp": "^1.0.4",
-    "replace-in-file": "^6.2.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.26.11",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-globals": "^1.4.0"
+    "eslint-config-scratch": "^7.0.0"
   }
 }
