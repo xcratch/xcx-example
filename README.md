@@ -5,7 +5,9 @@ This extension add extra-block "do it", that executes string in its input field 
 
 ## ✨ What You can Do
 
-Open [Example Project](https://xcratch.github.io/editor/#https://xcratch.github.io/xcx-example/projects/example.sb3) to look at what you can do with "Xcratch Example" extension. 
+Play [Example Project](https://xcratch.github.io/editor/#https://xcratch.github.io/xcx-example/projects/example.sb3) to look at what you can do with "Xcratch Example" extension. 
+<iframe src="https://xcratch.github.io/editor/player#https://xcratch.github.io/xcx-example/projects/example.sb3" width="540px" height="460px"></iframe>
+
 
 ## How to Use in Xcratch
 
