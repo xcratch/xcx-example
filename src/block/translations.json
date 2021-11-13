@@ -1,0 +1,14 @@
+{
+  "en": {
+    "xcratchExample.name": "Xcratch Example",
+    "xcratchExample.doIt": "do it [SCRIPT]"
+  },
+  "ja": {
+    "xcratchExample.name": "Xcratchの例",
+    "xcratchExample.doIt": "[SCRIPT] を実行する"
+  },
+  "ja-Hira": {
+    "xcratchExample.name": "エクスクラッチのれい",
+    "xcratchExample.doIt": "[SCRIPT] をじっこうする"
+  }
+}

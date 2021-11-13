@@ -1,0 +1,14 @@
+{
+  "en": {
+    "xcratchExample.entry.name": "Xcratch Example",
+    "xcratchExample.entry.description": "Do it in JavaScript"
+  },
+  "ja": {
+    "xcratchExample.entry.name": "Xcratchの例",
+    "xcratchExample.entry.description": "JavaScriptを実行する"
+  },
+  "ja-Hira": {
+    "xcratchExample.entry.name": "エクスクラッチのれい",
+    "xcratchExample.entry.description": "ジャバスクリプトをじっこうする"
+  }
+}

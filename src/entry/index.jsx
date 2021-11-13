@@ -1,35 +1,37 @@
 /**
- * Formatter which is used for translation.
- * This will be replaced which is used in the React component.
- * @param {*} messageData - data for format-message
- * @returns {string} - message for the current locale
+ * This is an extension for Xcratch.
  */
-let formatMessage = messageData => messageData.defaultMessage;
 
 import iconURL from './entry-icon.png';
 import insetIconURL from './inset-icon.svg';
+import translations from './translations';
 
-const translationMap = {
-    'ja': {
-        'gui.extension.xcratchExample.description': 'Xcratch 拡張の例'
-    },
-    'ja-Hira': {
-        'gui.extension.xcratchExample.description': 'Xcratch (えくすくらっち)かくちょうのれい'
-    }
-};
+/**
+ * Formatter to translate the messages in this extension.
+ * This will be replaced which is used in the React component.
+ * @param {object} messageData - data for format-message
+ * @returns {string} - translated message for the current locale
+ */
+let formatMessage = messageData => messageData.defaultMessage;
 
 const entry = {
-    name: 'Xcratch Example',
+    get name () {
+        return formatMessage({
+            id: 'xcratchExample.entry.name',
+            default: 'Xcratch Example',
+            description: 'name of the extension'
+        });
+    },
     extensionId: 'xcratchExample',
     extensionURL: 'https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs',
-    collaborator: 'Yengawa Lab',
+    collaborator: 'xcratch',
     iconURL: iconURL,
     insetIconURL: insetIconURL,
     get description () {
         return formatMessage({
-            defaultMessage: 'example extension for Xcratch',
-            description: 'Description for example extension for Xcratch',
-            id: 'gui.extension.xcratchExample.description'
+            defaultMessage: 'an extension for Xcratch',
+            description: 'Description for this extension',
+            id: 'xcratchExample.entry.description'
         });
     },
     featured: true,
@@ -40,7 +42,7 @@ const entry = {
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },
-    translationMap: translationMap
+    translationMap: translations
 };
 
 export {entry}; // loadable-extension needs this line.
