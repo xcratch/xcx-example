@@ -1,6 +1,6 @@
 {
   "name": "xcx-example",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "example extension for Xcratch",
   "scripts": {
     "register": "npx xcratch-register --link -C --id=xcratchExample --gui=\"../scratch-gui\"",
