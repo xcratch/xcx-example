@@ -1,0 +1,158 @@
+{
+    "targets": [
+        {
+            "isStage": true,
+            "name": "Stage",
+            "variables": {
+                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
+                    "my variable",
+                    0
+                ]
+            },
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "backdrop1",
+                    "dataFormat": "svg",
+                    "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                    "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                    "rotationCenterX": 240,
+                    "rotationCenterY": 180
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 0,
+            "tempo": 60,
+            "videoTransparency": 50,
+            "videoState": "on",
+            "textToSpeechLanguage": null
+        },
+        {
+            "isStage": false,
+            "name": "スプライト1",
+            "variables": {},
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {
+                "`sNsDW0Yj~Q,M=~,,O|@": {
+                    "opcode": "event_whenflagclicked",
+                    "next": "2GthS.8+si{!3dHoqas,",
+                    "parent": null,
+                    "inputs": {},
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": true,
+                    "x": 44,
+                    "y": 44
+                },
+                "2GthS.8+si{!3dHoqas,": {
+                    "opcode": "looks_say",
+                    "next": null,
+                    "parent": "`sNsDW0Yj~Q,M=~,,O|@",
+                    "inputs": {
+                        "MESSAGE": [
+                            3,
+                            "nQ]C2TOO}(vYi-.bOQ.)",
+                            [
+                                10,
+                                "Hello!"
+                            ]
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                "nQ]C2TOO}(vYi-.bOQ.)": {
+                    "opcode": "xcratchExample_do-it",
+                    "next": null,
+                    "parent": "2GthS.8+si{!3dHoqas,",
+                    "inputs": {
+                        "SCRIPT": [
+                            1,
+                            [
+                                10,
+                                "3 + 4"
+                            ]
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                }
+            },
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "コスチューム1",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "881c5994e99006fc05359d738af66337",
+                    "md5ext": "881c5994e99006fc05359d738af66337.svg",
+                    "rotationCenterX": 65.85918426513672,
+                    "rotationCenterY": 24.999961853027344
+                },
+                {
+                    "name": "コスチューム2",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "b6e71f1bf154c8a5470665fe87dd507c",
+                    "md5ext": "b6e71f1bf154c8a5470665fe87dd507c.svg",
+                    "rotationCenterX": 65.85923767089844,
+                    "rotationCenterY": 24.999961853027344
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "ニャー",
+                    "assetId": "83c36d806dc92327b9e7049a565c6bff",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 40681,
+                    "md5ext": "83c36d806dc92327b9e7049a565c6bff.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 1,
+            "visible": true,
+            "x": 0,
+            "y": 0,
+            "size": 100,
+            "direction": 90,
+            "draggable": false,
+            "rotationStyle": "all around"
+        }
+    ],
+    "monitors": [],
+    "extensions": [
+        "xcratchExample"
+    ],
+    "extensionURLs": [
+        [
+            "xcratchExample",
+            "https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs"
+        ]
+    ],
+    "meta": {
+        "semver": "3.0.0",
+        "vm": "2.1.14",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+}

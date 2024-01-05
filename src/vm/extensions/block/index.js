@@ -1,25 +1,29 @@
 import BlockType from '../../extension-support/block-type';
 import ArgumentType from '../../extension-support/argument-type';
-// import Cast from '../../util/cast';
-// import log from '../../util/log';
-import translations from './translations';
+import Cast from '../../util/cast';
+import log from '../../util/log';
+import translations from './translations.json';
 import blockIcon from './block-icon.png';
 
 /**
  * Formatter which is used for translation.
  * This will be replaced which is used in the runtime.
- * @param {*} messageData - format-message object
+ * @param {object} messageData - format-message object
  * @returns {string} - message for the locale
  */
-let formatMessage = messageData => messageData.defaultMessage;
+let formatMessage = messageData => messageData.default;
 
 /**
  * Setup format-message for this extension.
  */
 const setupTranslations = () => {
-    formatMessage.setup({
-        translations: translations
-    });
+    const localeSetup = formatMessage.setup();
+    if (localeSetup && localeSetup.translations[localeSetup.locale]) {
+        Object.assign(
+            localeSetup.translations[localeSetup.locale],
+            translations[localeSetup.locale]
+        );
+    }
 };
 
 const EXTENSION_ID = 'xcratchExample';
@@ -29,12 +33,20 @@ const EXTENSION_ID = 'xcratchExample';
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
  * @type {string}
  */
-let extensionURL = 'https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs';
+let extensionURL = 'https://yokobond.github.io/xcx-xcratchExample/dist/xcratchExample.mjs';
 
 /**
  * Scratch 3.0 blocks for example of Xcratch.
  */
 class ExtensionBlocks {
+    /**
+     * A translation object which is used in this class.
+     * @param {FormatObject} formatter - translation object
+     */
+    static set formatMessage (formatter) {
+        formatMessage = formatter;
+        if (formatMessage) setupTranslations();
+    }
 
     /**
      * @return {string} - the name of this extension.
@@ -42,7 +54,7 @@ class ExtensionBlocks {
     static get EXTENSION_NAME () {
         return formatMessage({
             id: 'xcratchExample.name',
-            default: 'Xcratch Example',
+            default: 'xcratchExample',
             description: 'name of the extension'
         });
     }
@@ -72,7 +84,7 @@ class ExtensionBlocks {
     }
 
     /**
-     * Construct a set of blocks for Xcratch Example.
+     * Construct a set of blocks for xcratchExample.
      * @param {Runtime} runtime - the Scratch 3.0 runtime.
      */
     constructor (runtime) {
@@ -86,11 +98,6 @@ class ExtensionBlocks {
             // Replace 'formatMessage' to a formatter which is used in the runtime.
             formatMessage = runtime.formatMessage;
         }
-    }
-
-    doIt (args) {
-        const func = new Function(`return (${args.SCRIPT})`);
-        return func.call(this);
     }
 
     /**
@@ -127,9 +134,13 @@ class ExtensionBlocks {
             }
         };
     }
+
+    doIt (args) {
+        const statement = Cast.toString(args.SCRIPT);
+        const func = new Function(`return (${statement})`);
+        log.log(`doIt: ${statement}`);
+        return func.call(this);
+    }
 }
 
-export {
-    ExtensionBlocks as default,
-    ExtensionBlocks as blockClass
-};
+export {ExtensionBlocks as default, ExtensionBlocks as blockClass};
