@@ -37,7 +37,7 @@ var entry = {
   get name() {
     return formatMessage$1({
       id: 'xcratchExample.entry.name',
-      default: 'Xcratch Example',
+      defaultMessage: 'Xcratch Example',
       description: 'name of the extension'
     });
   },
@@ -80,7 +80,7 @@ function _typeof$1(o) {
   }, _typeof$1(o);
 }
 
-function toPrimitive(t, r) {
+function toPrimitive$1(t, r) {
   if ("object" != _typeof$1(t) || !t) return t;
   var e = t[Symbol.toPrimitive];
   if (void 0 !== e) {
@@ -91,8 +91,8 @@ function toPrimitive(t, r) {
   return ("string" === r ? String : Number)(t);
 }
 
-function toPropertyKey(t) {
-  var i = toPrimitive(t, "string");
+function toPropertyKey$1(t) {
+  var i = toPrimitive$1(t, "string");
   return "symbol" == _typeof$1(i) ? i : String(i);
 }
 
@@ -102,7 +102,7 @@ function _defineProperties$1(target, props) {
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, toPropertyKey(descriptor.key), descriptor);
+    Object.defineProperty(target, toPropertyKey$1(descriptor.key), descriptor);
   }
 }
 function _createClass$1(Constructor, protoProps, staticProps) {
@@ -219,20 +219,20 @@ function _typeof(o) {
   }, _typeof(o);
 }
 
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (hint === "string" ? String : Number)(input);
+  return ("string" === r ? String : Number)(t);
 }
 
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : String(i);
 }
 
 function _defineProperties(target, props) {
@@ -241,7 +241,7 @@ function _defineProperties(target, props) {
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
+    Object.defineProperty(target, toPropertyKey(descriptor.key), descriptor);
   }
 }
 function _createClass(Constructor, protoProps, staticProps) {
@@ -536,6 +536,11 @@ var Cast = /*#__PURE__*/function () {
         }
         return value;
       }
+      // Replace full-width numbers with half-width ones.
+      value = value.replace(/[０-９＋．ｅ]/g, function (s) {
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+      });
+      value = value.replace(/[-－﹣−‐⁃‑‒–—﹘―⎯⏤ーｰ─━]/g, '-');
       var n = Number(value);
       if (Number.isNaN(n)) {
         // Scratch treats NaN as 0, when needed as a number.
@@ -579,7 +584,7 @@ var Cast = /*#__PURE__*/function () {
   }, {
     key: "toString",
     value: function toString(value) {
-      return String(value);
+      return String(value).replace(/\\n/g, '\n').replace(/\\t/g, '\t');
     }
 
     /**
@@ -650,8 +655,8 @@ var Cast = /*#__PURE__*/function () {
       if (isNaN(n1) || isNaN(n2)) {
         // At least one argument can't be converted to a number.
         // Scratch compares strings as case insensitive.
-        var s1 = String(v1).toLowerCase();
-        var s2 = String(v2).toLowerCase();
+        var s1 = Cast.toString(v1).toLowerCase();
+        var s2 = Cast.toString(v2).toLowerCase();
         if (s1 < s2) {
           return -1;
         } else if (s1 > s2) {
