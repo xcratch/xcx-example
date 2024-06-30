@@ -64,10 +64,8 @@ var entry = {
   translationMap: translations$1
 };
 
-function _classCallCheck$1(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
+function _classCallCheck$1(a, n) {
+  if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
 }
 
 function _typeof$1(o) {
@@ -84,34 +82,28 @@ function toPrimitive$1(t, r) {
   if ("object" != _typeof$1(t) || !t) return t;
   var e = t[Symbol.toPrimitive];
   if (void 0 !== e) {
-    var i = e.call(t, r || "default");
+    var i = e.call(t, r );
     if ("object" != _typeof$1(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return ("string" === r ? String : Number)(t);
+  return (String )(t);
 }
 
 function toPropertyKey$1(t) {
   var i = toPrimitive$1(t, "string");
-  return "symbol" == _typeof$1(i) ? i : String(i);
+  return "symbol" == _typeof$1(i) ? i : i + "";
 }
 
-function _defineProperties$1(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, toPropertyKey$1(descriptor.key), descriptor);
+function _defineProperties$1(e, r) {
+  for (var t = 0; t < r.length; t++) {
+    var o = r[t];
+    o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, toPropertyKey$1(o.key), o);
   }
 }
-function _createClass$1(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$1(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$1(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", {
-    writable: false
-  });
-  return Constructor;
+function _createClass$1(e, r, t) {
+  return r && _defineProperties$1(e.prototype, r), t && _defineProperties$1(e, t), Object.defineProperty(e, "prototype", {
+    writable: !1
+  }), e;
 }
 
 function getDefaultExportFromCjs (x) {
@@ -223,11 +215,11 @@ function toPrimitive(t, r) {
   if ("object" != _typeof(t) || !t) return t;
   var e = t[Symbol.toPrimitive];
   if (void 0 !== e) {
-    var i = e.call(t, r || "default");
+    var i = e.call(t, r );
     if ("object" != _typeof(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return ("string" === r ? String : Number)(t);
+  return (String )(t);
 }
 
 function toPropertyKey(t) {
@@ -245,7 +237,6 @@ function _defineProperties(target, props) {
   }
 }
 function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", {
     writable: false
@@ -257,7 +248,7 @@ var Color$1 = /*#__PURE__*/function () {
   function Color() {
     _classCallCheck(this, Color);
   }
-  _createClass(Color, null, [{
+  return _createClass(Color, null, [{
     key: "RGB_BLACK",
     get:
     /**
@@ -495,7 +486,6 @@ var Color$1 = /*#__PURE__*/function () {
       };
     }
   }]);
-  return Color;
 }();
 var color$3 = Color$1;
 
@@ -515,7 +505,7 @@ var Cast = /*#__PURE__*/function () {
   function Cast() {
     _classCallCheck(this, Cast);
   }
-  _createClass(Cast, null, [{
+  return _createClass(Cast, null, [{
     key: "toNumber",
     value:
     /**
@@ -744,7 +734,6 @@ var Cast = /*#__PURE__*/function () {
       return index;
     }
   }]);
-  return Cast;
 }();
 var cast = Cast;
 var Cast$1 = /*@__PURE__*/getDefaultExportFromCjs(cast);
@@ -1344,7 +1333,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
   /**
    * @returns {object} metadata for this extension and its blocks.
    */
-  _createClass$1(ExtensionBlocks, [{
+  return _createClass$1(ExtensionBlocks, [{
     key: "getInfo",
     value: function getInfo() {
       setupTranslations();
@@ -1435,7 +1424,6 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       extensionURL = url;
     }
   }]);
-  return ExtensionBlocks;
 }();
 
 export { ExtensionBlocks as blockClass, entry };
