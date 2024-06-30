@@ -1,6 +1,6 @@
 {
   "name": "xcx-example",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "example extension for Xcratch",
   "scripts": {
     "setup-dev": "node ./scripts/setup-dev.mjs",
