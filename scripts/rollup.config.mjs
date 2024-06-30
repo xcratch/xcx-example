@@ -30,7 +30,7 @@ const rollupOptions = {
         nodePolifills(),
         nodeResolve({
             browser: true, 
-            preferBuiltins: true, 
+            preferBuiltins: false, 
             modulePaths: [
                 path.resolve(process.cwd(), './node_modules'),
             ],
