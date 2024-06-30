@@ -31,7 +31,6 @@
     "fs-extra": "^11.2.0",
     "mocha": "^10.3.0",
     "rollup": "^4.12.1",
-    "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-polyfill-node": "^0.13.0"
   }
 }

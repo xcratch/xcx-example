@@ -4,7 +4,6 @@ import fs from 'fs-extra';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
-import nodeGlobals from 'rollup-plugin-node-globals';
 import nodePolifills from 'rollup-plugin-polyfill-node';
 import importImage from '@rollup/plugin-image';
 import multi from '@rollup/plugin-multi-entry';
@@ -28,7 +27,6 @@ const rollupOptions = {
         multi(),
         importImage(),
         commonjs(),
-        nodeGlobals(),
         nodePolifills(),
         nodeResolve({
             browser: true, 
