@@ -1369,7 +1369,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var statement = Cast$1.toString(args.SCRIPT);
       var func = new Function("return (".concat(statement, ")"));
       log$1.log("Capitalize: ".concat(statement));
-      return func.call(this);
+	    return statement.toUpperCase();
+      //return func.call(this);
     }
   }], [{
     key: "formatMessage",
