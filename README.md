@@ -18,7 +18,7 @@ This extension can be used with other extension in [Xcratch](https://xcratch.git
 3. Select 'Extension Loader' extension
 4. Type the module URL in the input field 
 ```
-https://xcratch.github.io/xcx-example/dist/xcratchExample.mjs
+https://engineeringeducationsteve.github.io/scratch-extension-example/dist/xcratchExample.mjs
 ```
 5. Click 'OK' button
 6. Now you can use the blocks of this extension
