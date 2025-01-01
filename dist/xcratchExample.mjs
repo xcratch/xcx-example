@@ -1356,7 +1356,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           arguments: {
             SCRIPT: {
               type: ArgumentType$1.STRING,
-              defaultValue: '3 + 4'
+              defaultValue: 'Hello, FabLab'
             }
           }
         }],
@@ -1366,7 +1366,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
   }, {
     key: "doIt",
     value: function doIt(args) {
-      var statement = Cast$1.toString(args.SCRIPT);
+      var statement = Cast$1.toString(args.SCRIPT).toUpperCase();
       var func = new Function("return (".concat(statement, ")"));
       log$1.log("doIt: ".concat(statement));
       return func.call(this);
