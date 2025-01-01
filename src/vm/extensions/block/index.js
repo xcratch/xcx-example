@@ -125,7 +125,7 @@ class ExtensionBlocks {
                     arguments: {
                         SCRIPT: {
                             type: ArgumentType.STRING,
-                            defaultValue: '3 + 4'
+                            defaultValue: 'Hello, FabLab!'
                         }
                     }
                 }
