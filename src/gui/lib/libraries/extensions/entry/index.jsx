@@ -34,6 +34,7 @@ const entry = {
             id: 'xcratchExample.entry.description'
         });
     },
+    tags: ['function', 'calculation', 'text'],
     featured: true,
     disabled: false,
     bluetoothRequired: false,
