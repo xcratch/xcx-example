@@ -1,0 +1,66 @@
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to publish"
+        default: "main"
+        required: true
+      publish-dir:
+        description: "Publish directory"
+        type: string
+        default: "."
+        required: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: inputs
+        run: echo "${{ toJSON(inputs) }}"
+      - name: checkout scratch-vm
+        uses: actions/checkout@v4
+        with:
+          repository: xcratch/scratch-vm
+          ref: ${{ inputs.checkout_ref }}
+          path: ./scratch-vm
+      - name: setup node for scratch-vm
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ./scratch-vm/.nvmrc
+      - run: npm ci
+        working-directory: ./scratch-vm
+      - name: checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          path: ./repo
+      - name: setup node for repository
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ./repo/.nvmrc
+      - name: install dependencies for repository
+        run: npm ci
+        working-directory: ./repo
+      - name: setup environment for repository
+        run: npm run setup-dev
+        working-directory: ./repo
+      - name: build module
+        run: npm run build
+        working-directory: ./repo
+      - name: copy files
+        run: |
+          mkdir -p ./publish
+          cp -r ./repo/dist ./publish/dist
+          cp -r ./repo/projects ./publish/projects
+          cp -r ./repo/README.md ./publish/README.md
+      - name: publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish
+          destination_dir: ${{ inputs.publish-dir }}
+          keep_files: false
+          enable_jekyll: true
