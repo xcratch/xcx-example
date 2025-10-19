@@ -1,5 +1,8 @@
 name: Deploy
 on:
+  push:
+    tags:
+      - 'v*.*.*'
   workflow_dispatch:
     inputs:
       branch:
@@ -20,36 +23,21 @@ jobs:
     steps:
       - name: inputs
         run: echo "${{ toJSON(inputs) }}"
-      - name: checkout scratch-vm
-        uses: actions/checkout@v4
-        with:
-          repository: xcratch/scratch-vm
-          ref: ${{ inputs.checkout_ref }}
-          path: ./scratch-vm
-      - name: setup node for scratch-vm
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ./scratch-vm/.nvmrc
-      - run: npm ci
-        working-directory: ./scratch-vm
+      - name: Set branch and publish-dir
+        id: config
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+            echo "publish-dir=." >> $GITHUB_OUTPUT
+          else
+            echo "branch=${{ inputs.branch }}" >> $GITHUB_OUTPUT
+            echo "publish-dir=${{ inputs.publish-dir }}" >> $GITHUB_OUTPUT
+          fi
       - name: checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: ${{ steps.config.outputs.branch }}
           path: ./repo
-      - name: setup node for repository
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ./repo/.nvmrc
-      - name: install dependencies for repository
-        run: npm ci
-        working-directory: ./repo
-      - name: setup environment for repository
-        run: npm run setup-dev
-        working-directory: ./repo
-      - name: build module
-        run: npm run build
-        working-directory: ./repo
       - name: copy files
         run: |
           mkdir -p ./publish
@@ -61,6 +49,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./publish
-          destination_dir: ${{ inputs.publish-dir }}
+          destination_dir: ${{ steps.config.outputs.publish-dir }}
           keep_files: false
           enable_jekyll: true

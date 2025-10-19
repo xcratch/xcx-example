@@ -2,11 +2,13 @@
   "name": "xcx-example",
   "version": "1.2.0",
   "description": "example extension for Xcratch",
+  "extensionId": "xcratchExample",
   "scripts": {
     "setup-dev": "node ./scripts/setup-dev.mjs",
     "build": "rollup -c ./scripts/rollup.config.mjs",
     "watch": "rollup -c ./scripts/rollup.config.mjs --watch",
-    "test": "jest"
+    "test": "jest",
+    "version": "node ./scripts/version-build.mjs && git add dist"
   },
   "devDependencies": {
     "@babel/core": "^7.28.0",
