@@ -2,10 +2,15 @@
   "extensionId": "xcratchExample",
   "versions": [
     {
+      "version": "1.4.0",
+      "buildDate": "2026-01-03T01:50:04.888Z",
+      "module": "1.4.0/xcratchExample.mjs"
+    },
+    {
       "version": "1.3.0",
       "buildDate": "2025-10-19T10:19:26.849Z",
       "module": "1.3.0/xcratchExample.mjs"
     }
   ],
-  "latest": "1.3.0"
+  "latest": "1.4.0"
 }
