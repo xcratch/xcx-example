@@ -1,0 +1,10 @@
+name: xcratch-skills-test
+version: 1.0.0
+description: APM project for xcratch-skills-test
+author: yokobond
+dependencies:
+  apm:
+  - xcratch/xcratch-skills
+  mcp: []
+includes: auto
+scripts: {}
