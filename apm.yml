@@ -1,6 +1,6 @@
-name: xcratch-skills-test
+name: xcx-example
 version: 1.0.0
-description: APM project for xcratch-skills-test
+description: APM project for xcx-example
 author: yokobond
 dependencies:
   apm:
